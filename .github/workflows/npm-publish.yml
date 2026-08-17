@@ -16,7 +16,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          registry-url: https://registry.npmjs.org/
       - uses: oven-sh/setup-bun@v2
       - run: bun ci
       - run: bun run build
@@ -27,5 +26,3 @@ jobs:
           else
             npm publish --access public
           fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
