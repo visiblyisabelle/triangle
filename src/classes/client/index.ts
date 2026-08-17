@@ -328,8 +328,7 @@ export class Client {
 
       const rj = (error: string) => {
         disband();
-        console.log(`LA-DEBUG: when waiting for ${listen} in response to ${event}, ${error} was received instead`)
-        reject(new Error(error));
+        reject(new Error(`LA-DEBUG: when waiting for ${listen} in response to ${event}, ${error} was received instead`));
       };
 
       this.on(listen, rs);
